@@ -1,4 +1,4 @@
-# Largest Divisible Subset
+# Largest Divisible Subset （类似leetcode 368）
 
 # input: a set of distinct positive integers
 # output: Largest Divisible Subset
