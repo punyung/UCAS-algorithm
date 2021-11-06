@@ -53,17 +53,18 @@ def Triangle(h, A):
                 dp[i][j] = dp[i - 1][j] + A[i][j]
             if j == i:
                 dp[i][j] = dp[i - 1][i - 1] + A[i][j]
-    # 返回dp 最后一行的最小值
-    ans = dp[l - 1][0]
-    for j in range(l):
-        if ans > dp[l - 1][j]:
-            ans = dp[l - 1][j]
-    return ans
+    # # 返回dp 最后一行的最小值
+    # ans = dp[l - 1][0]
+    # for j in range(l):
+    #     if ans > dp[l - 1][j]:
+    #         ans = dp[l - 1][j]
+    ans = min(dp[l-1])
+    return int(ans)
 
 
 # test
 h = 4
-A = [[2], [3, 4], [6, 5, 7], [4, 1, 8, 3]]
+A = [[-10]]
 print(Triangle(h, A))
 
 # leetcode 测试
@@ -88,4 +89,4 @@ print(Triangle(h, A))
 
 # OJ Input
 height = int(input())
-tr  = map(int,input()[:-1].)
+tr = map(int,input()[:-1])
