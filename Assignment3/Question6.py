@@ -52,8 +52,8 @@ def maxCoins(A):
     # print(A)
 
     # TEST
-    A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    print(maxCoins(A))
+A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(maxCoins(A))
 
 
 
