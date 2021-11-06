@@ -12,7 +12,10 @@
 
 def maxCoins(A):
     n = len(A)
+    list.sort(A)
+    pos = n
     ans = 0
+
     # m = max(A)
     # n = min(A)
     # A.remove(m)  # 删除数组A中的最大值
@@ -30,16 +33,26 @@ def maxCoins(A):
     #     ans = max(A)
 
     # 参考https://github.com/shotgun8767/ucas-algorithm/blob/master/assignment/3/6.py
-    for i in range(n//3):
-        m = max(A)
-        n = min(A)
-        A.remove(m)
-        A.remove(n)
-        ans = max(A)+ans
+    # for i in range(n//3): # 每次循环求三个最值，长度为n的数组，共需要循环n//3
+    #     m = max(A)
+    #     n = min(A)
+    #     A.remove(m)
+    #     A.remove(n)
+    #     t = max(A)
+    #     ans = t+ans
+    #     A.remove(t)
+    #     # print(ans)
+    #     # print(A)
+    # return ans
+
+    # 如何做到不删除结点就能得到结果
+    # Time:17min+20min
+    for i in range(n // 3):
+        pos = pos - 2
+        ans = ans + A[pos]  # 出现调用变量为空的情况
+        # print(ans)
+        # print(pos)
     return ans
-
-
-
 
     # 网上查到用遍历拷贝的list，操作原始的list
     # 以下是遍历拷贝list 的demo
@@ -52,10 +65,7 @@ def maxCoins(A):
     # print(A)
 
     # TEST
+
+
 A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(maxCoins(A))
-
-
-
-
-
