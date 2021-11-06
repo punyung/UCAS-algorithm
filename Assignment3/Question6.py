@@ -12,27 +12,49 @@
 
 def maxCoins(A):
     n = len(A)
+    ans = 0
     # m = max(A)
     # n = min(A)
     # A.remove(m)  # 删除数组A中的最大值
     # A.remove(n)  # 删除数组A中的最小值
     # ans = max(A)  # 此时提取原数组A的第二大数值作为ans
-    # # 如何将上述步骤变为循环？循环找最大值、最小值、第二大的数值
+    # 如何将上述步骤变为循环？循环找最大值、最小值、第二大的数值
     # 尝试用for 循环，发现失败
     # for i in range(len(A)):  # 循环删除元素，数组大小会发生改变
     #     if i >= len(A):
     #         break
     #     m = max(A)
     #     n = min(A)
-    #     A.pop()
-    # 网上查到用遍历拷贝的list，操作原始的list
-    for item in A[:]:
-        if item == 2:
-            A.remove(item)
-        else:
-            print(item)
+    #     A.remove(m)
+    #     A.remove(n)
+    #     ans = max(A)
 
-    print(A)
+    # 参考https://github.com/shotgun8767/ucas-algorithm/blob/master/assignment/3/6.py
+    for i in range(n//3):
+        m = max(A)
+        n = min(A)
+        A.remove(m)
+        A.remove(n)
+        ans = max(A)+ans
+    return ans
+
+
+
+
+    # 网上查到用遍历拷贝的list，操作原始的list
+    # 以下是遍历拷贝list 的demo
+    # for item in A[:]:
+    #     if item == 2:
+    #         A.remove(item)
+    #     else:
+    #         print(item)
+    #
+    # print(A)
+
+    # TEST
+    A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(maxCoins(A))
+
 
 
 
